@@ -1,19 +1,24 @@
 import random
 
-rand = random.randrange(1,100)
-print("I'm thinking of a number from 1 to 100.");
+#configuration
+
+low=1
+high=100
+
+rand = random.randint(low, high)
+print("i'm thinking of a number from "+str(low)+" to "+str(high)+".");
 
 guess = -1
 
 while guess != rand:
-    guess = input("Take a guess: ")
+    guess = input("take a guess: ")
     guess = int(guess)
     
     if guess < rand:
-        print("You guessed too low.")
+        print("too low")
     elif guess > rand:
-        print("You guessed too high.")
+        print("too high")
     else:
-        print("You got it!")
+        print("good job!!!")
 
-print("Game over")
+print("yeet")
