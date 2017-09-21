@@ -18,32 +18,56 @@ def get_guess():
         else:
             print ("hey dude it's gotta be a number")
 
-#game start 
+#play game
 
-rand = random.randint(low, high)
-print("i'm thinking of a number from "+str(low)+" to "+str(high)+".");
+def play_again():
+    while True:
+        decision=input("wanna play again? (y/n)")
 
-guess = -1
-tries = 0
+        if decision == "y" or decision== "yes":
+                return True
+        elif decision == "n" or decision =="no":
+                return False
 
-while guess != rand and tries < limit:
-    guess = get_guess()
-    
-    if guess < rand:
-        print("too low")
-    elif guess > rand:
-        print("too high")
+        print ("i'm confused please say 'y' or 'n'")
 
-    tries += 1
+again=True 
+                       
+while again:     
+    #game start
 
-#game end
-    
-if guess == rand:
-    print ("yeet u did it")
-    print ("u should be a medical terminologist")
+    print ("u got " + str(limit) + " guesses") 
 
-else:
-    print ("ur dumb as bricks it was actually " +str(rand))
-    print ("try taking medical terminology then try again :/")
+    rand = random.randint(low, high)
+    print("i'm thinking of a number from "+str(low)+" to "+str(high)+".");
+
+    guess = -1
+    tries = 0
+
+    #play game
+
+    while guess != rand and tries < limit:
+        guess = get_guess()
+        
+        if guess < rand:
+            print("too low")
+        elif guess > rand:
+            print("too high")
+
+        tries += 1
+
+    #game end
+        
+    if guess == rand:
+        print ("yeet u did it")
+        print ("u should be a medical terminologist")
+
+    else:
+        print ("ur dumb as bricks it was actually " +str(rand))
+        print ("try taking medical terminology then try again :/")
+
+    again=play_again()
+
+print ("see ya later")
     
     
