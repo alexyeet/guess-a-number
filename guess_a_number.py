@@ -1,10 +1,17 @@
 import random
+import math
 
 #configuration
 
 low=1
 high=100
-limit=10
+limit=round(math.log(high-low+1, 2) +.5)
+
+
+#welcome screen
+
+print ("welcome 2   g u e s s   a   n u m b e r")
+
 
 #translating guess to numeric
 
@@ -23,8 +30,9 @@ def get_guess():
 def play_again():
     while True:
         decision=input("wanna play again? (y/n)")
+        decision = decision.lower()
 
-        if decision == "y" or decision== "yes":
+        if decision == "y" or decision == "yes":
                 return True
         elif decision == "n" or decision =="no":
                 return False
