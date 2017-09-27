@@ -2,10 +2,10 @@ import random
 
 # config
 low = 1
-high = 1000
-
+high = 10
 
 # helper functions
+
 def show_start_screen():
     print("*************************")
     print("*  Guess a Number A.I!  *")
@@ -18,14 +18,18 @@ def get_guess(current_low, current_high):
     """
     Return a truncated average of current low and high.
     """
-    pass
+
+    guess = (current_high+current_low)//2
+    return guess
 
 def pick_number():
     """
     Ask the player to think of a number between low and high.
     Then  wait until the player presses enter.
     """
-    pass
+    print ("think of a number between " +str(low) + " and " +str(high))
+    print ("press enter when ur done")
+    cont=input()
 
 def check_guess(guess):
     """
@@ -35,6 +39,21 @@ def check_guess(guess):
              0 if the guess was correct
              1 if the guess was too high
     """
+
+    while True:
+        
+        correct = input(("is ") +str(guess) +" correct? (type y/n)")
+
+        if correct == 'y' or correct == 'yes':
+            return 0
+
+        print ("is your number higher or lower? (type h/l)")
+        highlow= input()
+        
+        if input == 'h':
+            return -1
+        if input == 'l':
+            return 1
 
 def show_result():
     """
@@ -66,15 +85,15 @@ def play():
 
         if check == -1:
             # adjust current_low
-            pass
+            current_low=guess
         elif check == 1:
             # adjust current_high
-            pass
+            current_high=guess
 
     show_result(guess, rand)
 
 
-# Game starts running here
+# game starts running here
 show_start_screen()
 
 playing = True
