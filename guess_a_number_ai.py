@@ -2,7 +2,7 @@ import random
 
 # config
 low = 1
-high = 10
+high = 1000
 
 # helper functions
 
@@ -28,10 +28,11 @@ def pick_number():
     Then  wait until the player presses enter.
     """
     print ("think of a number between " +str(low) + " and " +str(high))
-    print ("press enter when ur done")
+    print ("press enter when you're done :) ")
     cont=input()
 
 def check_guess(guess):
+
     """
     Computer will ask if guess was too high, low, or correct.
 
@@ -42,35 +43,37 @@ def check_guess(guess):
 
     while True:
         
-        correct = input(("is ") +str(guess) +" correct? (type y/n)")
+        correct = input("is " + str(guess) + " correct? (type y/n) ")
 
-        if correct == 'y' or correct == 'yes':
+        if correct.lower() == 'y' or correct.lower() == 'yes':
             return 0
 
-        print ("is your number higher or lower? (type h/l)")
-        highlow= input()
+        highlow = input("is your number higher or lower? (type h/l) ")
         
-        if input == 'h':
-            return -1
-        if input == 'l':
-            return 1
+        if highlow.lower() == 'h':
+            check = -1
+            return check
+        elif highlow.lower() == 'l':
+            check = 1
+            return check
 
-def show_result():
+def show_result(guess):
     """
     Says the result of the game. (The computer might always win.)
     """
-    pass
+    
+    print ("told you i'm a genius :^)")
 
 def play_again():
     while True:
-        decision = input("Would you like to play again? (y/n) ")
+        decision = input("would you like to play again? (y/n) ")
 
         if decision == 'y' or decision == 'yes':
             return True
         elif decision == 'n' or decision == 'no':
             return False
         else:
-            print("I don't understand. Please enter 'y' or 'n'.")
+            print("i don't understand. please enter 'y' or 'n' ")
 
 def play():
     current_low = low
@@ -90,7 +93,7 @@ def play():
             # adjust current_high
             current_high=guess
 
-    show_result(guess, rand)
+    show_result(guess)
 
 
 # game starts running here
