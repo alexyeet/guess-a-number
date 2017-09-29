@@ -1,8 +1,19 @@
+
+#guess a number a.i.
+#alex f
+#
+#this program prompts the player to choose a number and guesses it.
+
+
+
 import random
+import math 
 
 # config
 low = 1
-high = 1000
+high = 10
+limit=round(math.log(high-low+1, 2) +.5)
+
 
 # helper functions
 
@@ -21,6 +32,7 @@ def get_guess(current_low, current_high):
 
     guess = (current_high+current_low)//2
     return guess
+
 
 def pick_number():
     """
@@ -42,7 +54,7 @@ def check_guess(guess):
     """
 
     while True:
-        
+
         correct = input("is " + str(guess) + " correct? (type y/n) ")
 
         if correct.lower() == 'y' or correct.lower() == 'yes':
@@ -56,6 +68,7 @@ def check_guess(guess):
         elif highlow.lower() == 'l':
             check = 1
             return check
+   
 
 def show_result(guess):
     """
@@ -75,14 +88,20 @@ def play_again():
         else:
             print("i don't understand. please enter 'y' or 'n' ")
 
+    tries += 1
+
+    while False:
+        print("thanks for playing!! ┬┴┬┴┤( ͡° ͜ʖ├┬┴┬┴")
+    
 def play():
     current_low = low
     current_high = high
     check = -1
+    tries = 0
     
     pick_number()
     
-    while check != 0:
+    while check != 0 and tries < limit:
         guess = get_guess(current_low, current_high)
         check = check_guess(guess)
 
@@ -92,6 +111,7 @@ def play():
         elif check == 1:
             # adjust current_high
             current_high=guess
+        tries += 1
 
     show_result(guess)
 
