@@ -1,0 +1,35 @@
+*************************
+*  guess a number ai!!  *
+*************************
+in this game, you will be asked to choose a low and high number
+then, you'll choose a number within that range
+i will guess it!
+first, what is your name?  jeff
+give me a low number, jeff  3
+ok, now give me a high number, jeff  78
+think of a number between 3 and 78, jeff
+press enter when you're done :) 
+
+is 40 correct, jeff? (type y/n) n
+is your number higher or lower,jeff? (type h/l) h
+is 59 correct, jeff? (type y/n) n
+is your number higher or lower,jeff? (type h/l) l
+is 49 correct, jeff? (type y/n) y
+i guessed it, jeff! :) 
+would you like to play again, jeff? (y/n) y
+give me a low number, jeff  3
+ok, now give me a high number, jeff  89
+think of a number between 3 and 89, jeff
+press enter when you're done :) 
+
+is 46 correct, jeff? (type y/n) n
+is your number higher or lower,jeff? (type h/l) h
+is 67 correct, jeff? (type y/n) no
+is your number higher or lower,jeff? (type h/l) h
+is 78 correct, jeff? (type y/n) y
+i guessed it, jeff! :) 
+would you like to play again, jeff? (y/n) n
+thank you for playing, jeff! 
+this game was made by alex f in mr coopers programming 1 class :)
+thanks for playing!! ----¦:)+----
+completed on 10/6/17
